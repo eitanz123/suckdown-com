@@ -1,4 +1,17 @@
-# Michael SD Brief - 2026-06-27
+---
+title: "Michael SD Brief"
+type: source-brief
+status: draft_unverified
+verified: false
+review_required: true
+source_system: "Stanford Gmail"
+source_subject: "SD"
+tags: [suckdown, michael-mcgovern, source-brief, unverified]
+---
+
+# Michael SD Brief
+
+Draft extract from Michael's email. This is not canonical until Eitan reviews it.
 
 Source: Stanford Gmail thread from Michael McGovern, subject `SD`.
 
