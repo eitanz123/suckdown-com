@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+  overflow-x: hidden;
 }
 
 button,
@@ -40,8 +42,21 @@ a {
   font: inherit;
 }
 
+button,
+a,
+dialog {
+  -webkit-tap-highlight-color: rgba(242, 61, 47, 0.22);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 4px solid var(--blue);
+  outline-offset: 4px;
+}
+
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   border-bottom: 4px solid var(--ink);
   background:
     radial-gradient(circle at 78% 26%, rgba(36, 104, 255, 0.26), transparent 23rem),
@@ -52,13 +67,19 @@ a {
 .ticker {
   display: flex;
   gap: 0;
-  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
   border-bottom: 4px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
   font-size: 0.8rem;
   font-weight: 1000;
   text-transform: uppercase;
+}
+
+.ticker::-webkit-scrollbar {
+  display: none;
 }
 
 .ticker span {
@@ -69,6 +90,7 @@ a {
 
 .hero-grid {
   min-height: calc(100vh - 46px);
+  min-height: calc(100svh - 46px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
   gap: clamp(28px, 6vw, 80px);
@@ -91,6 +113,7 @@ h2,
 h3,
 p {
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -122,7 +145,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 52px;
   padding: 0 18px;
   border: 3px solid var(--ink);
   border-radius: var(--radius);
@@ -141,6 +164,7 @@ h1 {
 .button:active,
 .odds button:active {
   transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--ink);
 }
 
 .terminal {
@@ -150,6 +174,7 @@ h1 {
   color: #98ffbc;
   box-shadow: 14px 14px 0 var(--blue);
   transform: rotate(1.5deg);
+  max-width: 100%;
 }
 
 .terminal-head {
@@ -199,7 +224,7 @@ h1 {
 .market,
 .files,
 .history {
-  padding: clamp(56px, 9vw, 112px) clamp(18px, 5vw, 72px);
+  padding: clamp(48px, 9vw, 112px) max(18px, env(safe-area-inset-right)) clamp(48px, 9vw, 112px) max(18px, env(safe-area-inset-left));
 }
 
 .section-title {
@@ -342,12 +367,14 @@ h3 {
 }
 
 .odds {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 .odds button {
-  min-width: 98px;
+  min-width: 0;
+  min-height: 52px;
   border: 3px solid var(--ink);
   border-radius: var(--radius);
   background: var(--paper);
@@ -446,10 +473,13 @@ h3 {
 
 .captcha {
   width: min(92vw, 560px);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100svh - 24px);
   border: 4px solid var(--ink);
   border-radius: var(--radius);
   padding: 0;
   box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.35);
+  overflow: auto;
 }
 
 .captcha::backdrop {
@@ -516,8 +546,7 @@ h3 {
   .hero-grid,
   .market-shell,
   .module-grid,
-  .file-wall,
-  .timeline {
+  .file-wall {
     grid-template-columns: 1fr;
   }
 
@@ -528,29 +557,190 @@ h3 {
   .terminal {
     transform: none;
   }
+
+  .terminal-body {
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 560px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .ticker {
+    font-size: 0.68rem;
+  }
+
+  .ticker span {
+    padding: 10px 14px;
+  }
+
   .hero-grid {
-    padding: 18px;
+    min-height: auto;
+    padding: 18px 16px 32px;
+    gap: 24px;
   }
 
   h1 {
-    font-size: clamp(4rem, 23vw, 6.4rem);
+    max-width: 7.5ch;
+    font-size: clamp(3.75rem, 21vw, 5.7rem);
+    line-height: 0.82;
   }
 
-  .actions,
-  .odds {
+  .lede {
+    margin-top: 20px;
+    font-size: clamp(1.04rem, 5vw, 1.45rem);
+    line-height: 1.08;
+  }
+
+  .actions {
     flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
   }
 
-  .button,
-  .odds button {
+  .button {
     width: 100%;
+  }
+
+  .terminal {
+    border-width: 3px;
+    box-shadow: 7px 7px 0 var(--blue);
+  }
+
+  .terminal-head {
+    min-height: 36px;
+    padding: 0 10px;
+  }
+
+  .terminal-head strong {
+    max-width: 42vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .terminal-body {
+    min-height: 220px;
+    max-height: 280px;
+    overflow: auto;
+    padding: 16px;
+    font-size: 0.84rem;
+  }
+
+  .modules,
+  .market,
+  .files,
+  .history {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .section-title {
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 12vw, 3.15rem);
+    line-height: 0.98;
+  }
+
+  h3 {
+    font-size: clamp(1.35rem, 8vw, 2rem);
+  }
+
+  .module-grid {
+    gap: 10px;
+  }
+
+  .module-grid article {
+    min-height: 190px;
+    padding: 16px;
+  }
+
+  .market-shell {
+    gap: 14px;
+  }
+
+  .wallet {
+    min-height: 0;
+  }
+
+  .wallet strong {
+    font-size: 3rem;
+  }
+
+  .markets article {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .odds button {
+    padding: 11px 8px;
+  }
+
+  .file-wall {
+    gap: 10px;
+  }
+
+  .file-wall div {
+    min-height: 158px;
+    padding: 14px;
+    transform: none;
+  }
+
+  .file-wall b {
+    margin-bottom: 18px;
+  }
+
+  .file-wall span,
+  .file-wall em {
+    margin: 9px 0;
+  }
+
+  .timeline {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(168px, 72vw);
+    grid-template-columns: none;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .timeline p {
+    min-height: 142px;
+    scroll-snap-align: start;
+  }
+
+  .timeline strong {
+    font-size: 3.3rem;
   }
 
   .captcha-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .captcha {
+    width: calc(100vw - 18px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .captcha form {
+    padding: 14px;
+  }
+
+  .captcha-head {
+    margin: -14px -14px 14px;
+    padding: 10px 14px;
+  }
+
+  .captcha-grid button {
+    min-height: 72px;
+    padding: 8px;
   }
 }
 
