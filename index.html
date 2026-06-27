@@ -3,110 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suck Down</title>
+    <title>Suckdown.com</title>
     <meta
       name="description"
-      content="The private July 4 weekend field guide for the Suck Down crew."
+      content="America 250 x World Cup. The members-only Suckdown command center is booting up."
     />
-    <meta property="og:title" content="Suck Down" />
+    <meta property="og:title" content="Suckdown.com" />
     <meta
       property="og:description"
-      content="Atlanta. July 4 weekend. Details travel by invite."
+      content="A very serious digital institution for a very serious annual reunion."
     />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#f4572f" />
+    <meta name="theme-color" content="#0b1020" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
       <section class="hero" aria-labelledby="title">
-        <div class="signal-bar" aria-hidden="true">
-          <span>ATL</span>
-          <span>JULY 4</span>
-          <span>INVITE ONLY</span>
+        <div class="ticker" aria-label="Suckdown system status">
+          <span>SUCKDOWN VII</span>
+          <span>JULY 1-5, 2026</span>
+          <span>AMERICA 250 x WORLD CUP</span>
+          <span>DOME SECURITY ONLINE</span>
         </div>
 
-        <div class="hero-copy">
-          <p class="kicker">The annual field guide</p>
-          <h1 id="title">Suck Down</h1>
-          <p class="lede">
-            Atlanta. Old friends. New stories. Details stay off the open web.
-          </p>
-          <div class="hero-actions">
-            <a href="#weekend" class="button">Weekend rhythm</a>
-            <a href="#signal" class="button secondary">Ground rules</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">members-only build preview</p>
+            <h1 id="title">Suckdown.com</h1>
+            <p class="lede">
+              The annual reunion now has a digital institution: fake security,
+              real lore, fake markets, real consequences.
+            </p>
+            <div class="actions">
+              <button class="button" data-open-captcha>Enter the dome</button>
+              <a class="button secondary" href="#price-picks">Open Price Picks</a>
+            </div>
+          </div>
+
+          <div class="terminal" aria-label="DomeBot boot console">
+            <div class="terminal-head">
+              <span></span><span></span><span></span>
+              <strong>DomeBot.ai</strong>
+            </div>
+            <div class="terminal-body" data-terminal>
+              <p>&gt; loading meeting minutes...</p>
+              <p>&gt; importing six years of lore...</p>
+              <p>&gt; refusing cloud storage...</p>
+              <p>&gt; status: emotionally unavailable</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="poster" aria-label="Suck Down weekend pass">
-          <div class="poster-stamp">SD</div>
-          <div class="poster-lines">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+      <section class="modules" id="modules" aria-labelledby="modules-title">
+        <div class="section-title">
+          <p class="eyebrow">v1 shape</p>
+          <h2 id="modules-title">Enough to make the group chat dangerous.</h2>
+        </div>
+        <div class="module-grid">
+          <article>
+            <span>01</span>
+            <h3>Joke reCAPTCHA</h3>
+            <p>Looks official. Uses the crew. Fails you no matter what.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Player Profiles</h3>
+            <p>Stats, songs, photos, related degenerates. Real auth required.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>The Suck Files</h3>
+            <p>Classified documents with redactions doing their actual job.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>DomeBot</h3>
+            <p>Local lore engine. No cloud notes. No plausible deniability.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="market" id="price-picks" aria-labelledby="market-title">
+        <div class="section-title">
+          <p class="eyebrow">Price Picks beta</p>
+          <h2 id="market-title">A prediction market with fake money and real allegations.</h2>
+        </div>
+        <div class="market-shell">
+          <div class="wallet">
+            <p>Wallet</p>
+            <strong><span data-balance>100</span> SDT</strong>
+            <small>Annual token grant. Not legal tender. Barely moral tender.</small>
           </div>
-          <p>July 4 weekend</p>
-          <strong data-countdown>soon</strong>
+          <div class="markets" data-markets>
+            <article data-market data-yes="44" data-no="56">
+              <div>
+                <p>Market 001</p>
+                <h3>Will someone declare the theme "actually tasteful"?</h3>
+              </div>
+              <div class="odds">
+                <button data-buy="yes">Yes <span>44</span></button>
+                <button data-buy="no">No <span>56</span></button>
+              </div>
+            </article>
+            <article data-market data-yes="61" data-no="39">
+              <div>
+                <p>Market 002</p>
+                <h3>Will DomeBot get shut down before Saturday?</h3>
+              </div>
+              <div class="odds">
+                <button data-buy="yes">Yes <span>61</span></button>
+                <button data-buy="no">No <span>39</span></button>
+              </div>
+            </article>
+            <article data-market data-yes="28" data-no="72">
+              <div>
+                <p>Market 003</p>
+                <h3>Will anyone understand the pricing algorithm?</h3>
+              </div>
+              <div class="odds">
+                <button data-buy="yes">Yes <span>28</span></button>
+                <button data-buy="no">No <span>72</span></button>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="band intro" id="signal">
-        <div>
-          <p class="eyebrow">Public signal, private details</p>
-          <h2>If you are on the list, you already know the route.</h2>
+      <section class="files" aria-labelledby="files-title">
+        <div class="section-title">
+          <p class="eyebrow">The Suck Files</p>
+          <h2 id="files-title">A classified archive of things nobody should have committed to memory.</h2>
         </div>
-        <p>
-          This page exists as the front door: a place to point people, confirm
-          the weekend is real, and keep the important stuff where it belongs:
-          in the thread.
-        </p>
-      </section>
-
-      <section class="weekend" id="weekend" aria-labelledby="weekend-title">
-        <div class="section-heading">
-          <p class="eyebrow">Weekend rhythm</p>
-          <h2 id="weekend-title">Loose plan, durable traditions.</h2>
-        </div>
-        <div class="schedule">
-          <article>
-            <span>Friday</span>
-            <h3>Arrivals</h3>
-            <p>Get in, find your people, settle the group chat logistics.</p>
-          </article>
-          <article>
-            <span>Saturday</span>
-            <h3>The main event</h3>
-            <p>Daylight outside, night plan by consensus, hydration mandatory.</p>
-          </article>
-          <article>
-            <span>Sunday</span>
-            <h3>Reset</h3>
-            <p>Slow breakfast, airport rides, and evidence management.</p>
-          </article>
+        <div class="file-wall" aria-label="Redacted files preview">
+          <div><b>INCIDENT REPORT</b><span></span><span></span><em>MEMBER 17</em></div>
+          <div><b>MEETING MINUTES</b><span></span><em>REDACTED</em><span></span></div>
+          <div><b>DOME MEMO</b><em>UNVERIFIED</em><span></span><span></span></div>
+          <div><b>ARCHIVE NOTE</b><span></span><span></span><em>SEE GROUP CHAT</em></div>
+          <div><b>MARKET AUDIT</b><em>NO COMMENT</em><span></span><span></span></div>
+          <div><b>SONG DISPUTE</b><span></span><em>SEALED</em><span></span></div>
         </div>
       </section>
 
-      <section class="rules" aria-labelledby="rules-title">
-        <div class="section-heading">
-          <p class="eyebrow">House code</p>
-          <h2 id="rules-title">The only things worth putting in writing.</h2>
+      <section class="history" aria-labelledby="history-title">
+        <div class="section-title">
+          <p class="eyebrow">canon</p>
+          <h2 id="history-title">Six years of lore, one dangerously searchable archive.</h2>
         </div>
-        <ul>
-          <li>Do not post the address.</li>
-          <li>Bring something useful.</li>
-          <li>Take care of the friend next to you.</li>
-          <li>Leave the place cleaner than you found it.</li>
-        </ul>
-      </section>
-
-      <section class="cta" aria-labelledby="cta-title">
-        <p class="eyebrow">Next move</p>
-        <h2 id="cta-title">Need the actual details?</h2>
-        <p>Text Michael or ask in the group thread. The site is the sign, not the map.</p>
+        <div class="timeline">
+          <p><strong>I</strong> Founding myth</p>
+          <p><strong>II</strong> Tradition hardens</p>
+          <p><strong>III</strong> Beast era</p>
+          <p><strong>IV</strong> The disputed year</p>
+          <p><strong>V</strong> Disposable camera crisis</p>
+          <p><strong>VI</strong> America 250 x World Cup</p>
+        </div>
       </section>
     </main>
+
+    <dialog class="captcha" data-captcha>
+      <form method="dialog">
+        <div class="captcha-head">
+          <strong>DomeCheck</strong>
+          <button aria-label="Close">x</button>
+        </div>
+        <p class="captcha-prompt">Select every person currently claiming they "packed light."</p>
+        <div class="captcha-grid">
+          <button type="button">Hat</button>
+          <button type="button">Sunglasses</button>
+          <button type="button">Airport beer</button>
+          <button type="button">Undisclosed</button>
+          <button type="button">Wrong shoes</button>
+          <button type="button">Too much confidence</button>
+        </div>
+        <p class="captcha-result" data-captcha-result></p>
+        <button type="button" class="button" data-verify>Verify</button>
+      </form>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

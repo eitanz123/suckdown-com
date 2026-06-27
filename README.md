@@ -4,9 +4,11 @@ Public-safe static landing page for the Suck Down July 4 weekend.
 
 Live preview: https://eitanz123.github.io/suckdown-com/
 
+Source brief: `specs/michael-sd-brief.md`
+
 ## Notes
 
-- No attendee roster, address, or private logistics are published.
+- No attendee roster, address, private stories, or private logistics are published.
 - `suckdown.com` currently points to GoDaddy/NameFind parking DNS (`NS1.NAMEFIND.COM`, `NS2.NAMEFIND.COM`), so the site is deployed before DNS is transferred.
 - Static files only: `index.html`, `styles.css`, `script.js`, `favicon.svg`.
 
